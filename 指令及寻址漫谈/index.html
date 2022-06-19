@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>指令及寻址漫谈 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="展示Markdown的基本语法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="指令及寻址漫谈">
+<meta property="og:url" content="http://cainoftes.github.io/%E6%8C%87%E4%BB%A4%E5%8F%8A%E5%AF%BB%E5%9D%80%E6%BC%AB%E8%B0%88/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="展示Markdown的基本语法">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-04-05T10:01:48.000Z">
+<meta property="article:modified_time" content="2022-04-05T10:03:23.162Z">
+<meta property="article:author" content="Cainoftes">
+<meta property="article:tag" content="Essay">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://cainoftes.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-指令及寻址漫谈" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/%E6%8C%87%E4%BB%A4%E5%8F%8A%E5%AF%BB%E5%9D%80%E6%BC%AB%E8%B0%88/" class="article-date">
+  <time class="dt-published" datetime="2022-04-05T10:01:48.000Z" itemprop="datePublished">2022-04-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Essay/">Essay</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      指令及寻址漫谈
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><em>这篇并不是来教条的，告诉你到底什么寻址叫什么。这篇文章是讲汇编指令的</em></p>
+<h2 id="数的寻址"><a href="#数的寻址" class="headerlink" title="数的寻址"></a>数的寻址</h2><ol>
+<li><p>强大的<code>mov</code>指令。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MOV DST, SRC</span><br></pre></td></tr></table></figure>
+
+<p>按照朴素的价值观。汇编语言中的数大概可以这样分类</p>
+<ul>
+<li>立即数，也就是直接嵌入到汇编语言中的。</li>
+<li>寄存器，数字保存在CPU内的寄存器中</li>
+<li>内存，数字并没有调入CPU，而是放在内存中等待调用</li>
+</ul>
+<p>基本这三类就可以概括清楚了。但是在<code>MOV</code>指令中我们还得细化一下寄存器</p>
+<ul>
+<li>通用寄存器</li>
+<li>段寄存器</li>
+</ul>
+<p>段寄存器的作用就是来为段寻址（在16位和32位中的寻址方式不同），基本来讲，有</p>
+<ul>
+<li>CS(Code Segment)：寻址当前代码段</li>
+<li>DS(Data Segment)：寻址数据段</li>
+<li>SS(Stack Segment)：寻址栈段（但是不知道为什么被翻译为堆栈）</li>
+</ul>
+<p>而通用寄存器就老多了</p>
+<ul>
+<li>AX(Accumulator Reg)</li>
+<li>BX(Base Reg)</li>
+<li>CX(Counter Reg)</li>
+<li>DX(Data Reg)</li>
+<li>BP(Base Pointer)</li>
+<li>SI(Source Index)</li>
+<li>DI(Destination Index)</li>
+</ul>
+<p>当然，上面给我们的启示之一就是这些名字不是乱起的，每一个都代表着一定的意义。虽然叫通用寄存器，但是有些功能离开了某一个寄存器就是不行。例如说AX、DX之于MUL指令。</p>
+<p>知道了上面这些，就可以详细讨论一下<code>MOV</code>指令的寻址方式了（或许称为DST和SRC的类型更为妥当！）</p>
+<p>\1. 立即数只能做SRC</p>
+<p>\2. 内存只能做DST，除非通用寄存器做SRC</p>
+<p>\3. 段寄存器不能直接和立即数MOV</p>
+<p>\4. 只有通用寄存器才可以从自身到自身</p>
+<p>实际上每一类对应一条规则，规则1的优先级最高，这样可以推出DST和SRC的情况。但是还有一点小小的瑕疵</p>
+<p>\5. CS不能作为DST</p>
+<p>这样就完美了。CS是当前执行代码段的寻址寄存器，切换当前程序段自然有它的方法，而不是靠着MOV改变CS就能切换的，至于如何改变的，这个后面再讲！</p>
+<p>Tips1：需要注意的是，DST和SRC表达的数应该是相同长度的，不然会出错。别的都好说，如果遇到了内存里边的数，可以用 <code>[某个标识长度的词] PTR</code> 来标识这个数的长度。</p>
+<p>Tips2：这里的MOV还可以是ADD, ADC, SUB, SBB, CMP, AND, TEST, OR, XOR等</p>
+</li>
+<li><p><code>IN</code>和<code>OUT</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">IN ACR, PORT</span><br><span class="line">OUT PORT, ACR</span><br></pre></td></tr></table></figure>
+
+<p>这里的ACR意思是累加寄存器，也就是AL&#x2F;AX&#x2F;EAX&#x2F;RAX。</p>
+<p>这里的PORT可以是立即数，如果这个立即数能用一个字节标识的话（0-255）</p>
+<p>这里的PORT还可以是DX标识，如果使用了DX，也就意味着要使用间接寻址的方式。</p>
+</li>
+<li><p>难以理解的<code>MUL</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MUL SRC</span><br></pre></td></tr></table></figure>
+
+<p>事实上，这里的SRC不能是立即数（可以为段寄存器）。</p>
+<p>有以下两个问题需要解决：</p>
+<ol>
+<li>乘法涉及到三个数，被乘数、乘数、积。另外两个去了哪？</li>
+<li>积的范围要比乘数和被乘数大。例如说，两个8位的数相乘，积最大可能是65025，需要使用16位来保存。应该怎么处理。</li>
+</ol>
+<p>所以，MUL隐藏了被乘数和积。其中被乘数隐藏在累加器中（从硬件上来说，乘法可以被累加所实现，当然，也可以使用更高效的办法，主要看CPU的设计），也就是AL, AX, EAX中。而具体选用累加器的哪个，还得看SRC，SRC是多少位的就使用多少位的累加器。</p>
+<p>如果是AL，必须使用使用16位来保存结果，也就是AX。</p>
+<p>如果是AX，必须使用32位来保存结果，但是不能是EAX。因为AX是随着16位CPU诞生的，哪个时候EAX还没有诞生，所以使用了DX-AX的方式，将两个寄存器拼接在一起来表示。</p>
+<p>如果是EAX，必须使用64位来保存结果，也就是EDX-EAX。</p>
+<p>当32位CPU诞生的时候，为了兼容只能继续之前的设计方式。</p>
+<p>Tips：IMUL中的一种和MUL的寻址一样。</p>
+</li>
+<li><p><code>DIV</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DIV SRC</span><br></pre></td></tr></table></figure>
+
+<p>这里对SRC的要求和MUL一样，不能是一个立即数（但是不理解为什么不能是）</p>
+<p>也有两个问题需要解决</p>
+<ol>
+<li>被除数，除数，商中的另外两个去了哪？</li>
+<li>如果除不尽应该怎么办？</li>
+</ol>
+<p>实际上，还有一个问题，CPU的设计者并不满足这样设计，因为还有更好的方案。并牵扯除了第三个问题</p>
+<ol>
+<li>被除数的位数是除数的两倍</li>
+</ol>
+<p>至于为什么这么设计更好，后面再说。</p>
+<p>没有了结果变长的苦恼，但是又多了一个还有余数的苦恼。但是使用MUL的逆向思维，也可以解决这两个问题。</p>
+<p>SRC是一个除数，被除数至少有一部分保存在累加器中。事实上，把MUL完全倒过来可以先解释一部分问题。</p>
+<p>如果SRC是8位的，那么被除数应该是16位的，直接使用AX。</p>
+<p>如果SRC是16位的，那么被除数应该是32位的，直接使用DX-AX。</p>
+<p>如果SRC是32位的，那么被除数应该是64位的，直接使用 EDX-EAX</p>
+<p>可以看出来，这就是MUL的逆向。</p>
+<p>说完了被除数，再来说商和余数。</p>
+<p>如果说使用AX，商最多只有8位，保存到AL中，余数保存到DL中。</p>
+<p>如果说使用DX-AX，商最多只有16位，保存到AX中，余数保存到DX中。</p>
+<p>如果说使用EDX-EAX，商最多只有32位，保存到EAX中，余数保存到EDX中。</p>
+<p>可以说，数据寄存器(D)就是为了累加器(A)而服务的。</p>
+<p>Tips：IDIV同理</p>
+</li>
+<li><p><code>SHL</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHL DST, CNT</span><br></pre></td></tr></table></figure>
+
+<p>其中，DST不能是立即数，CNT由CL寄存器给出（也可以使用立即数，但是这个是30286之后，但是不管是怎么样的,，CNT的位数不能大于8位。如果真大于了，也没有什么实际的意义，直接清零了）</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cainoftes.github.io/%E6%8C%87%E4%BB%A4%E5%8F%8A%E5%AF%BB%E5%9D%80%E6%BC%AB%E8%B0%88/" data-id="cl4lbjz2n0017vcqy1ao914yu" data-title="指令及寻址漫谈" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Essay/" rel="tag">Essay</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/C/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          C
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Instruction/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Instruction</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/">Essay</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Reference/">Reference</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tutorial/">Tutorial</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBase/" rel="tag">DataBase</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essay/" rel="tag">Essay</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reference/" rel="tag">Reference</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/Essay/" style="font-size: 10px;">Essay</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Reference/" style="font-size: 20px;">Reference</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/Markdown%E5%AE%98%E6%96%B9%E8%AF%AD%E6%B3%95/">Markdown官方语法</a>
+          </li>
+        
+          <li>
+            <a href="/Python%E6%80%BB%E5%86%99/">Python总写</a>
+          </li>
+        
+          <li>
+            <a href="/C-%E7%B1%BB/">C#类</a>
+          </li>
+        
+          <li>
+            <a href="/C%E8%AF%AD%E8%A8%80%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">C语言奇技淫巧</a>
+          </li>
+        
+          <li>
+            <a href="/C-%E7%B1%BB%E5%9E%8B/">C#类型</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 Cainoftes<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

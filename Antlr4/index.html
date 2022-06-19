@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Antlr4 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="展示Antlr的基本语法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Antlr4">
+<meta property="og:url" content="http://cainoftes.github.io/Antlr4/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="展示Antlr的基本语法">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-05-03T03:54:03.000Z">
+<meta property="article:modified_time" content="2022-05-03T05:07:09.609Z">
+<meta property="article:author" content="Cainoftes">
+<meta property="article:tag" content="Reference">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://cainoftes.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Antlr4" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/Antlr4/" class="article-date">
+  <time class="dt-published" datetime="2022-05-03T03:54:03.000Z" itemprop="datePublished">2022-05-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Reference/">Reference</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Antlr4
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="http://yijun1171.github.io/2015/03/30/ANTLR4%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AF%AD%E6%B3%95%E5%AD%97%E5%85%B8-Grammar-Lexicon/">ANTLR4学习笔记 | Eden (yijun1171.github.io)</a></p>
+<p><a target="_blank" rel="noopener" href="https://wizardforcel.gitbooks.io/antlr4-short-course/content/installing-antlr.html">安装ANTLR · ANTLR 4简明教程 (gitbooks.io)</a></p>
+<h2 id="文法结构"><a href="#文法结构" class="headerlink" title="文法结构"></a>文法结构</h2><ol>
+<li><p>注释：和<code>Java</code>的注释完全一致，也可参考C的注释，只是增加了<code>JavaDoc</code>类型的注释；</p>
+</li>
+<li><p>标志符：参考<code>Java</code>或者<code>C</code>的标志符命名规范，</p>
+<ul>
+<li><p>针对<code>Lexer</code> 部分的 <code>Token</code> 名的定义，推荐全大写字母的形式</p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ID, LPAREN, RIGHT_CURLY </span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>对于<code>parser rule</code>命名，推荐首字母小写的驼峰命名；</p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">expr, simpleDclarator, d2, header_file</span><br></pre></td></tr></table></figure></blockquote>
+</li>
+</ul>
+</li>
+<li><p>不区分字符和字符串，都是用单引号引起来的，同时，虽然<code>Antlr g4</code>支持 <code>Unicode</code>编码（即支持中文编码），但是建议大家尽量还有英文；</p>
+</li>
+<li><p><code>Action</code>，动作是用目标语言书写的代码块，主要有<code>@header</code> 和<code>@members</code>，用来定义一些需要生成到目标代码中的行为，例如，可以通过<code>@header</code>设置生成的代码的<code>package</code>信息，<code>@members</code>可以定义额外的一些变量到&#96;Antlr语法文件中；</p>
+</li>
+<li><p><code>Antlr4</code>语法中，支持的关键字有：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span>, fragment, lexer, parser, grammar, returns, locals, <span class="keyword">throws</span>, <span class="keyword">catch</span>, <span class="keyword">finally</span>, mode, options, tokens</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="整体结构"><a href="#整体结构" class="headerlink" title="整体结构"></a>整体结构</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">grammar name;</span><br><span class="line"></span><br><span class="line">options &#123;...&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ...;</span><br><span class="line"></span><br><span class="line">tokens&#123;...&#125;</span><br><span class="line"></span><br><span class="line">channels &#123;...&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@actionName</span>&#123;...&#125;</span><br><span class="line"></span><br><span class="line">rule1 </span><br><span class="line"></span><br><span class="line">ruleN</span><br></pre></td></tr></table></figure>
+
+<h2 id="详细介绍"><a href="#详细介绍" class="headerlink" title="详细介绍"></a>详细介绍</h2><ol>
+<li>替代标签：语句后面加<code>#name</code></li>
+<li><code>Antlr</code>采用BNF范式</li>
+<li>文件名必须和grammar定义的相同</li>
+<li></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cainoftes.github.io/Antlr4/" data-id="cl4lbjz0u0000vcqy5muwfxqm" data-title="Antlr4" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Reference/" rel="tag">Reference</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/Fluent%20Python/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Fluent Python
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Linux/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Linux.md</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/">Essay</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Reference/">Reference</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tutorial/">Tutorial</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBase/" rel="tag">DataBase</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essay/" rel="tag">Essay</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reference/" rel="tag">Reference</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/Essay/" style="font-size: 10px;">Essay</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Reference/" style="font-size: 20px;">Reference</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/Markdown%E5%AE%98%E6%96%B9%E8%AF%AD%E6%B3%95/">Markdown官方语法</a>
+          </li>
+        
+          <li>
+            <a href="/Python%E6%80%BB%E5%86%99/">Python总写</a>
+          </li>
+        
+          <li>
+            <a href="/C-%E7%B1%BB/">C#类</a>
+          </li>
+        
+          <li>
+            <a href="/C%E8%AF%AD%E8%A8%80%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">C语言奇技淫巧</a>
+          </li>
+        
+          <li>
+            <a href="/C-%E7%B1%BB%E5%9E%8B/">C#类型</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 Cainoftes<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

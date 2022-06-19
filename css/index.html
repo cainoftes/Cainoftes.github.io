@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>CSS | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="CSS手记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS">
+<meta property="og:url" content="http://cainoftes.github.io/CSS/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="CSS手记">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-04-13T09:22:38.000Z">
+<meta property="article:modified_time" content="2022-04-13T15:00:27.204Z">
+<meta property="article:author" content="Cainoftes">
+<meta property="article:tag" content="Reference">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://cainoftes.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-CSS" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/CSS/" class="article-date">
+  <time class="dt-published" datetime="2022-04-13T09:22:38.000Z" itemprop="datePublished">2022-04-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Reference/">Reference</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      CSS
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><h3 id="基础选择器"><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h3><ol>
+<li>类选择器</li>
+<li>id选择器</li>
+<li>元素选择器</li>
+<li>*选择器</li>
+</ol>
+<h3 id="复合选择器"><a href="#复合选择器" class="headerlink" title="复合选择器"></a>复合选择器</h3><ol>
+<li>后代选择器：空格分割</li>
+<li>子元素选择器：使用<code>&gt;</code>选择亲孩子</li>
+<li>并集选择器：使用<code>,</code>分割</li>
+<li>链接伪类选择器：<code>a:link</code>，<code>a:hover</code>，<code>a:active</code></li>
+<li>focus伪类选择器：<code>input:focus</code></li>
+</ol>
+<h2 id="元素显示模式"><a href="#元素显示模式" class="headerlink" title="元素显示模式"></a>元素显示模式</h2><h3 id="块元素"><a href="#块元素" class="headerlink" title="块元素"></a>块元素</h3><ol>
+<li>独占一行</li>
+<li>高度、宽度、内外边距可以自定义</li>
+<li>默认宽度是父容器的100%</li>
+<li>是一个容器及盒子，里边可以放行内元素或块级元素</li>
+<li>文字类的元素内不能使用块级元素，例如<code>&lt;h1-h6&gt;</code>，<code>&lt;p&gt;</code>内不能放置<code>&lt;div&gt;</code></li>
+</ol>
+<h3 id="行内元素-x2F-内联元素"><a href="#行内元素-x2F-内联元素" class="headerlink" title="行内元素&#x2F;内联元素"></a>行内元素&#x2F;内联元素</h3><ol>
+<li>宽度和高度直接设置无效</li>
+<li>默认宽度是它本身的宽度</li>
+<li>行内元素只能容纳行内元素或文本</li>
+<li>链接里边不能再放链接</li>
+<li>链接里边可以放块级元素：什么是链接：<code>&lt;a&gt;</code></li>
+</ol>
+<h2 id="行内块元素"><a href="#行内块元素" class="headerlink" title="行内块元素"></a>行内块元素</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img, input, td</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>一行可以有多个，但是中间会有空白空隙</li>
+<li>默认宽度是它本身的宽度</li>
+<li>高度、行高、外边距以及内边距都可以控制</li>
+</ol>
+<h3 id="元素转换"><a href="#元素转换" class="headerlink" title="元素转换"></a>元素转换</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">display</span>:block</span><br><span class="line">display:inline</span><br><span class="line">display:inline-block</span><br></pre></td></tr></table></figure>
+
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="设置文字垂直居中"><a href="#设置文字垂直居中" class="headerlink" title="设置文字垂直居中"></a>设置文字垂直居中</h3><p>让文字的高度和父容器高度相等</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">line-height:100px</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置背景"><a href="#设置背景" class="headerlink" title="设置背景"></a>设置背景</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">background-color</span>:transparent|color;</span><br><span class="line"><span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">./a.jpg</span>);</span><br><span class="line"><span class="attribute">background-repeat</span>: repeat|no-repeat|repeat-x|repeat-y;</span><br><span class="line"><span class="attribute">background-position</span>:x y;</span><br><span class="line"><span class="attribute">background-attachment</span>:scroll|fixed</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>x: 可以是<code>left|center|right</code>，y：可以是<code>bottom|center|top</code></li>
+<li>如果x|y是方位词，而另一个省略了，默认为center。</li>
+</ol>
+<h2 id="三大特性"><a href="#三大特性" class="headerlink" title="三大特性"></a>三大特性</h2><h3 id="重叠性"><a href="#重叠性" class="headerlink" title="重叠性"></a>重叠性</h3><p>采取就近原则</p>
+<h3 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h3><h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><p>从高到低：!important &gt; 行内样式 &gt; ID选择器 &gt; 类选择器&#x2F;伪类选择器 &gt; 元素选择器 &gt; 继承&#x2F;*</p>
+<p>需要注意的是：如果是继承的样式，只要别的地方有修改就不起作用了。</p>
+<p>这样就解释了为什么修改<code>&lt;p&gt;</code>的时候<code>&lt;a&gt;</code>并不会改变</p>
+<blockquote>
+<p>复合选择器会出现权重叠加的现象，但是永远不会进位</p>
+</blockquote>
+<h2 id="网页布局"><a href="#网页布局" class="headerlink" title="网页布局"></a>网页布局</h2><h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><ol>
+<li>border&#x2F;border-top&#x2F;border-<ul>
+<li>border-width</li>
+<li>border-style</li>
+<li>border-color</li>
+</ul>
+</li>
+<li>content</li>
+<li>padding</li>
+<li>margin</li>
+</ol>
+<h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cainoftes.github.io/CSS/" data-id="cl4lbjz1i0006vcqybx015dxp" data-title="CSS" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Reference/" rel="tag">Reference</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/Linux/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Linux.md
+        
+      </div>
+    </a>
+  
+  
+    <a href="/JavaScript/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JavaScript</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/">Essay</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Reference/">Reference</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tutorial/">Tutorial</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBase/" rel="tag">DataBase</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essay/" rel="tag">Essay</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reference/" rel="tag">Reference</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/Essay/" style="font-size: 10px;">Essay</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Reference/" style="font-size: 20px;">Reference</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/Markdown%E5%AE%98%E6%96%B9%E8%AF%AD%E6%B3%95/">Markdown官方语法</a>
+          </li>
+        
+          <li>
+            <a href="/Python%E6%80%BB%E5%86%99/">Python总写</a>
+          </li>
+        
+          <li>
+            <a href="/C-%E7%B1%BB/">C#类</a>
+          </li>
+        
+          <li>
+            <a href="/C%E8%AF%AD%E8%A8%80%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">C语言奇技淫巧</a>
+          </li>
+        
+          <li>
+            <a href="/C-%E7%B1%BB%E5%9E%8B/">C#类型</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 Cainoftes<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

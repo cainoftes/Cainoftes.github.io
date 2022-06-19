@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>C#操作符 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="展示Markdown的基本语法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C#操作符">
+<meta property="og:url" content="http://cainoftes.github.io/C-%E6%93%8D%E4%BD%9C%E7%AC%A6/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="展示Markdown的基本语法">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-05-19T02:03:08.000Z">
+<meta property="article:modified_time" content="2022-05-19T10:01:19.603Z">
+<meta property="article:author" content="Cainoftes">
+<meta property="article:tag" content="Reference">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://cainoftes.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-C-操作符" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/C-%E6%93%8D%E4%BD%9C%E7%AC%A6/" class="article-date">
+  <time class="dt-published" datetime="2022-05-19T02:03:08.000Z" itemprop="datePublished">2022-05-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Reference/">Reference</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      C#操作符
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id=""><a href="#" class="headerlink" title="."></a>.</h2><ul>
+<li><p>访问外层命名空间中的子层命名空间</p>
+</li>
+<li><p>访问名称空间中的类型</p>
+</li>
+<li><p>访问类的静态成员（静态成员属于类）</p>
+</li>
+<li><p>访问对象的实例成员</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.IO.Create();</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="-1"><a href="#-1" class="headerlink" title="[]"></a>[]</h2><p>用法：方括号里边放索引</p>
+<ul>
+<li><p>访问数组，方括号里边是整数</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 演示一下数组的创建</span></span><br><span class="line"><span class="comment">// 虽然是一个数组对象，但是不能用正常的创建方法</span></span><br><span class="line"><span class="built_in">int</span>[] myIntArray = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">10</span>];</span><br><span class="line"><span class="comment">// 初始化构造器</span></span><br><span class="line"><span class="built_in">int</span>[] myIntArray = <span class="keyword">new</span> <span class="built_in">int</span>[]&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> ,<span class="number">4</span> ,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="comment">// 需要注意的是，这两个数字必须相同</span></span><br><span class="line"><span class="built_in">int</span>[] myIntArray = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">5</span>]&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>访问字典</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 演示字典创建</span><br><span class="line">Dictionary&lt;String, classname&gt; classDict = new Dictionary&lt;String, Classname&gt;();</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="typedof"><a href="#typedof" class="headerlink" title="typedof()"></a>typedof()</h2><p>Metadata</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Type t = typedof(int);</span><br><span class="line">t.Namespace();</span><br><span class="line">t.GetMethods();</span><br></pre></td></tr></table></figure>
+
+<h2 id="default"><a href="#default" class="headerlink" title="default()"></a>default()</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int x = default(int);</span><br><span class="line">// 引用类型是null</span><br><span class="line">Form form = default(Form);</span><br><span class="line">// 枚举类型，枚举类型声明的时候，会和int对应起来。而default获得的是0对应的东西。</span><br><span class="line">// 如果枚举里边没有0的时候，会返回一个0.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="new"><a href="#new" class="headerlink" title="new"></a>new</h2><p>创建实例，调用实例构造器&#x2F;初始化器，并返回实例的内存地址。</p>
+<p>构造器是圆括号，初始化器是花括号。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// 关键字var来自variable。</span><br><span class="line">var x = 100;</span><br><span class="line">x.GetType().Name</span><br><span class="line"></span><br><span class="line">// 以下语句可以正常调用，考虑算符优先级</span><br><span class="line">new Form().ShowDialog();</span><br><span class="line">// 但是在内存中创建对象却并不一定需要new。例如以下语法糖</span><br><span class="line">string name = &quot;Tom&quot;;</span><br><span class="line">int[] myArray = &#123;1,2,3,4&#125;;</span><br><span class="line">// 创建匿名对象</span><br><span class="line">var person = new &#123;Name = &quot;tom&quot;, age = 34&#125;;</span><br><span class="line">//&lt;&gt;f__AnonymousType0`2</span><br><span class="line">// 0代表是第0个，2代表里边有两个东西</span><br><span class="line">person.GetType().Name</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>new 还可以做为关键字。</p>
+<ul>
+<li>重写子类的方法</li>
+</ul>
+<h2 id="checked-x2F-unchecked"><a href="#checked-x2F-unchecked" class="headerlink" title="checked&#x2F;unchecked"></a>checked&#x2F;unchecked</h2><p>检查值在内存中是否有溢出</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">uint</span> x = <span class="built_in">uint</span>.MaxValue;</span><br><span class="line">Console.WriteLine(x);</span><br><span class="line"><span class="built_in">string</span> binStr = Convert.ToString(x, <span class="number">2</span>);</span><br><span class="line">Console.WriteLine(binStr);</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="comment">// 如果不检查异常，就不会有异常，y就是0</span></span><br><span class="line">	<span class="built_in">uint</span> y = <span class="keyword">unchecked</span>(x + <span class="number">1</span>);</span><br><span class="line">  <span class="comment">// 如果有异常，就会检查异常，就会触发下面的语句，如果没有catch，会报错</span></span><br><span class="line">	Console.WriteLine(y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span> (OverflowException ex) &#123;</span><br><span class="line">	Console.WriteLine(<span class="string">&quot;OverFlow sized&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果checked不作为操作符，它可以表示整个语句块是否检查，例如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">checked&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="delegate"><a href="#delegate" class="headerlink" title="delegate"></a>delegate</h2><p>把delegate作为操作符使用已经很少了，取代它的是lambda。都是用于匿名方法。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.myButton.click	+= <span class="built_in">delegate</span>(<span class="built_in">object</span> sender, RoutedEventArgs e)&#123;</span><br><span class="line">	<span class="keyword">this</span>.MyTextBox.Text = <span class="string">&quot;Hello World!&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.myButton.click	+= (sender, e) =&gt; &#123;</span><br><span class="line">	<span class="keyword">this</span>.MyTextBox.Text = <span class="string">&quot;Hello World!&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="sizeof"><a href="#sizeof" class="headerlink" title="sizeof"></a>sizeof</h2><p>只能作用于结构体类型，字符串就不属于。</p>
+<p>对于自己定义的结构体，需要使用unsafe上下文，还要对选项做一些修改。</p>
+<h2 id="gt"><a href="#gt" class="headerlink" title="-&gt;"></a>-&gt;</h2><p>是的，C#中有指针类型，但是得放在unsafe上下文中。</p>
+<h2 id="amp"><a href="#amp" class="headerlink" title="&amp;"></a>&amp;</h2><p>同样，C#中真的有&amp;来取地址。</p>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Convert.ToInt32(str);</span><br></pre></td></tr></table></figure>
+
+<h3 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h3><ul>
+<li>不丢失精度的转换</li>
+<li>子类向父类转换</li>
+<li>装箱：从栈到堆</li>
+</ul>
+<h3 id="显式类型转换"><a href="#显式类型转换" class="headerlink" title="显式类型转换"></a>显式类型转换</h3><p>coder得自己确定自己到底在做什么东西！</p>
+<ul>
+<li><p>cast（铸造：用一个模子，然后将能塞的塞进去，塞不进去？丢掉！）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">uint x = 65536;</span><br><span class="line">ushort y = (ushort)x;</span><br><span class="line">// 这就是cast！implicit敢转的我们转，implicit不敢转的我们也敢转，这就是cast，够清楚吗？啊？！</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>拆箱</p>
+</li>
+<li><p>使用Convert类</p>
+</li>
+<li><p>ToString方法、各个数据类型的Parse&#x2F;tryParse</p>
+<blockquote>
+<p>任何一种数据类型都是以Object类型为根的，而Object仅仅有四个方法</p>
+<ul>
+<li>Equals</li>
+<li>GetHashCode</li>
+<li>GetType</li>
+<li>ToString</li>
+</ul>
+<p>这就意味着，任何一个数据类型都有ToString方法可以调用</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="自己定义一个类型转换"><a href="#自己定义一个类型转换" class="headerlink" title="自己定义一个类型转换"></a>自己定义一个类型转换</h3><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 有一个类，它叫Stone，还有一个类，它叫Monkey。地球人都知道这个事情，编译器也知道。</span></span><br><span class="line"><span class="comment">// 传闻太古年间有一则秘闻，其实，石头机缘巧合（cast）之下可以变成猴子（对！就是西游记）</span></span><br><span class="line"><span class="comment">// 但是还有人不知道这件事。编译器也不知道。所以！</span></span><br><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">TieMenLiu</span> &#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">TieMen</span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span> &#123;</span><br><span class="line">            Stone stone = <span class="keyword">new</span> Stone();</span><br><span class="line">            stone.Age = <span class="number">5000</span>;</span><br><span class="line">            <span class="comment">/*Monkey wukongsun = (Monkey)stone;*/</span></span><br><span class="line">            Monkey wukongsun = stone;</span><br><span class="line">            Console.WriteLine(wukongsun.Age);</span><br><span class="line">        &#125;        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Stone</span> &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">int</span> Age;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 不能同时显示和隐式类型转换</span></span><br><span class="line">        <span class="comment">/*public static explicit operator Monkey(Stone stone) &#123;</span></span><br><span class="line"><span class="comment">            Monkey m = new Monkey();</span></span><br><span class="line"><span class="comment">            m.Age = stone.Age / 500;</span></span><br><span class="line"><span class="comment">            return m;</span></span><br><span class="line"><span class="comment">        &#125;*/</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">implicit</span> <span class="keyword">operator</span> <span class="title">Monkey</span>(<span class="params">Stone stone</span>)</span> &#123;</span><br><span class="line">            Monkey m = <span class="keyword">new</span> Monkey();</span><br><span class="line">            m.Age = stone.Age / <span class="number">250</span>;</span><br><span class="line">            <span class="keyword">return</span> m;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Monkey</span> &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">int</span> Age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="加减乘"><a href="#加减乘" class="headerlink" title="加减乘"></a>加减乘</h2><p>无穷大和0相乘为NaN</p>
+<h2 id="is"><a href="#is" class="headerlink" title="is"></a>is</h2><p>检测对象是否是类（也可以是父类）的实例。</p>
+<p>例如说老师继承自动物，既然是老师，一定是动物。</p>
+<p>但是</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Object t = <span class="keyword">new</span> techer();</span><br><span class="line">t <span class="keyword">is</span> techer</span><br><span class="line"><span class="comment">// 这个是对的！</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="as"><a href="#as" class="headerlink" title="as"></a>as</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Object o = <span class="keyword">new</span> Teacher();</span><br><span class="line"><span class="comment">// 如果是的话就赋值，不然我就给你null</span></span><br><span class="line">Teacher t = o <span class="keyword">as</span> Teacher;</span><br></pre></td></tr></table></figure>
+
+<h2 id="-2"><a href="#-2" class="headerlink" title="??"></a>??</h2><blockquote>
+<p>你确定自己不是在抬杠？</p>
+</blockquote>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Nullable&lt;<span class="built_in">int</span>&gt; x = <span class="literal">null</span>;</span><br><span class="line">x = <span class="number">100</span>;</span><br><span class="line">Console.WriteLine(x);</span><br><span class="line">Console.WriteLine(x.hasValue())</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这个和Nullable是一回事情</span></span><br><span class="line"><span class="built_in">int</span>? x = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果x是null,则y是1，否则，y是x</span></span><br><span class="line"><span class="comment">// Null值合并操作符</span></span><br><span class="line"><span class="built_in">int</span> y = x ?? <span class="number">1</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cainoftes.github.io/C-%E6%93%8D%E4%BD%9C%E7%AC%A6/" data-id="cl4lbjz140001vcqyglko8v76" data-title="C#操作符" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Reference/" rel="tag">Reference</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/WPF%E5%9F%BA%E7%A1%80/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          WPF基础
+        
+      </div>
+    </a>
+  
+  
+    <a href="/python/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">python</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/">Essay</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Reference/">Reference</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tutorial/">Tutorial</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataBase/" rel="tag">DataBase</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essay/" rel="tag">Essay</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reference/" rel="tag">Reference</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/Essay/" style="font-size: 10px;">Essay</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Reference/" style="font-size: 20px;">Reference</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/Markdown%E5%AE%98%E6%96%B9%E8%AF%AD%E6%B3%95/">Markdown官方语法</a>
+          </li>
+        
+          <li>
+            <a href="/Python%E6%80%BB%E5%86%99/">Python总写</a>
+          </li>
+        
+          <li>
+            <a href="/C-%E7%B1%BB/">C#类</a>
+          </li>
+        
+          <li>
+            <a href="/C%E8%AF%AD%E8%A8%80%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/">C语言奇技淫巧</a>
+          </li>
+        
+          <li>
+            <a href="/C-%E7%B1%BB%E5%9E%8B/">C#类型</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 Cainoftes<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
