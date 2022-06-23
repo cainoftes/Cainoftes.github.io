@@ -1,4 +1,566 @@
-<!DOCTYPE html><html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/css/highlight.css"><link rel="stylesheet" type="text/css" href="/css/noise.css"><title>archive | Cainoftes</title><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><meta name="generator" content="Hexo 6.2.0"></head><body><header class="wrapper header"><div class="container blog-title"><a class="title" id="logo" href="/.">Cainoftes</a><span class="subtitle">记录简单的工具和芝士</span><label id="toggle-menu" for="menu" onclick><i class="fa fa-bars"></i></label></div><input id="menu" type="checkbox"><div class="container nav-items"><a class="sidebar-nav-item" href="/">Home</a><a class="sidebar-nav-item active" href="/archives">Archives</a></div></header><article class="wrapper"><div class="post-entry"><div class="post"><div class="post-archive"><h2>2022</h2><ul class="listing"><li><span class="date">2022/05/03</span><a href="/Antlr4/" title="Antlr4">Antlr4</a></li><li><span class="date">2022/04/21</span><a href="/Linux/" title="Linux.md">Linux.md</a></li><li><span class="date">2022/04/13</span><a href="/CSS/" title="CSS">CSS</a></li><li><span class="date">2022/04/10</span><a href="/JavaScript/" title="JavaScript">JavaScript</a></li><li><span class="date">2022/04/09</span><a href="/C/" title="C">C</a></li><li><span class="date">2022/04/05</span><a href="/%E6%8C%87%E4%BB%A4%E5%8F%8A%E5%AF%BB%E5%9D%80%E6%BC%AB%E8%B0%88/" title="指令及寻址漫谈">指令及寻址漫谈</a></li><li><span class="date">2022/04/03</span><a href="/Instruction/" title="Instruction">Instruction</a></li><li><span class="date">2022/04/03</span><a href="/Markdown/" title="Markdown">Markdown</a></li></ul></div><!-- show all categories and tags--><h2>Categories</h2><div class="all-categories"><ul class="tag-box list-unstyled"><li><a href="/categories/Essay/">Essay<span>1</span></a></li><li><a href="/categories/Markdown/">Markdown<span>1</span></a></li><li><a href="/categories/Reference/">Reference<span>15</span></a></li><li><a href="/categories/Tutorial/">Tutorial<span>1</span></a></li></ul></div><h2>Tags</h2><div class="all-tags"><ul class="tag-box list-unstyled"><li><a href="/tags/DataBase/">DataBase<span>1</span></a></li><li><a href="/tags/Essay/">Essay<span>1</span></a></li><li><a href="/tags/Markdown/">Markdown<span>1</span></a></li><li><a href="/tags/Python/">Python<span>1</span></a></li><li><a href="/tags/Reference/">Reference<span>14</span></a></li></ul></div></div></div></article><div class="wrapper page-navigator-wrapper"><div class="page-navigator"><a class="extend prev" rel="prev" href="/archives/2022/">« Prev</a><a class="page-number" href="/archives/2022/">1</a><span class="page-number current">2</span></div></div><link rel="stylesheet" type="text/css" href="//cdn.bootcdn.net/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcdn.net/ajax/libs/lato-font/3.0.0/css/lato-font.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcdn.net/ajax/libs/fancybox/2.1.5/jquery.fancybox.css"><script src="//cdn.bootcdn.net/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="//cdn.bootcdn.net/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script>$(document).ready(function() {
-  $(".fancybox").fancybox();
-});
-</script></body></html>
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Cainoftes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://cainoftes.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="" />
+
+
+<meta name="description" content="和计算机相关的知识都会写" />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    归档：2022 |
+    
+    Cainoftes
+</title>
+
+<link rel="alternate" href="/atom.xml" title="Cainoftes" type="application/atom+xml">
+
+
+<link rel="icon" href="/avater.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    /./img/sea.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='Cainoftes'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://cainoftes.github.io">
+                        Cainoftes</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                首页</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content ">
+                    <div id="main">
+    <div class="timebox">
+        <div class="timeline">
+            <ul>
+                
+                
+                
+                
+                
+                
+                <h2>
+                    2022
+                </h2>
+                
+                
+                <li>
+                    
+                    <h3>
+                        18<span>
+                            06月</span>
+                    </h3>
+                    <a href="/Markdown%E5%AE%98%E6%96%B9%E8%AF%AD%E6%B3%95/" title="Markdown官方语法" target="_blank">
+                        Markdown官方语法</a>
+                </li>
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                    <h3>
+                        12<span>
+                            06月</span>
+                    </h3>
+                    <a href="/Python%E6%80%BB%E5%86%99/" title="Python总写" target="_blank">
+                        Python总写</a>
+                </li>
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                    <h3>
+                        23<span>
+                            05月</span>
+                    </h3>
+                    <a href="/C-%E7%B1%BB/" title="C#类" target="_blank">
+                        C#类</a>
+                </li>
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                    <h3>
+                        21<span>
+                            05月</span>
+                    </h3>
+                    <a href="/C%E8%AF%AD%E8%A8%80%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/" title="C语言奇技淫巧" target="_blank">
+                        C语言奇技淫巧</a>
+                </li>
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                    <h3>
+                        21<span>
+                            05月</span>
+                    </h3>
+                    <a href="/C-%E7%B1%BB%E5%9E%8B/" title="C#类型" target="_blank">
+                        C#类型</a>
+                </li>
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                    <h3>
+                        21<span>
+                            05月</span>
+                    </h3>
+                    <a href="/MySql/" title="MySql" target="_blank">
+                        MySql</a>
+                </li>
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                    <h3>
+                        19<span>
+                            05月</span>
+                    </h3>
+                    <a href="/WPF%E5%9F%BA%E7%A1%80/" title="WPF基础" target="_blank">
+                        WPF基础</a>
+                </li>
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                    <h3>
+                        19<span>
+                            05月</span>
+                    </h3>
+                    <a href="/C-%E6%93%8D%E4%BD%9C%E7%AC%A6/" title="C#操作符" target="_blank">
+                        C#操作符</a>
+                </li>
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                    <h3>
+                        11<span>
+                            05月</span>
+                    </h3>
+                    <a href="/python/" title="python" target="_blank">
+                        python</a>
+                </li>
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                    <h3>
+                        07<span>
+                            05月</span>
+                    </h3>
+                    <a href="/Fluent%20Python/" title="Fluent Python" target="_blank">
+                        Fluent Python</a>
+                </li>
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                    <h3>
+                        03<span>
+                            05月</span>
+                    </h3>
+                    <a href="/Antlr4/" title="Antlr4" target="_blank">
+                        Antlr4</a>
+                </li>
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                    <h3>
+                        21<span>
+                            04月</span>
+                    </h3>
+                    <a href="/Linux/" title="Linux.md" target="_blank">
+                        Linux.md</a>
+                </li>
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                    <h3>
+                        13<span>
+                            04月</span>
+                    </h3>
+                    <a href="/CSS/" title="CSS" target="_blank">
+                        CSS</a>
+                </li>
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                    <h3>
+                        10<span>
+                            04月</span>
+                    </h3>
+                    <a href="/JavaScript/" title="JavaScript" target="_blank">
+                        JavaScript</a>
+                </li>
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                    <h3>
+                        09<span>
+                            04月</span>
+                    </h3>
+                    <a href="/C/" title="C" target="_blank">
+                        C</a>
+                </li>
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                    <h3>
+                        05<span>
+                            04月</span>
+                    </h3>
+                    <a href="/%E6%8C%87%E4%BB%A4%E5%8F%8A%E5%AF%BB%E5%9D%80%E6%BC%AB%E8%B0%88/" title="指令及寻址漫谈" target="_blank">
+                        指令及寻址漫谈</a>
+                </li>
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                    <h3>
+                        03<span>
+                            04月</span>
+                    </h3>
+                    <a href="/Instruction/" title="Instruction" target="_blank">
+                        Instruction</a>
+                </li>
+                
+                
+                
+                
+                
+                
+                <li>
+                    
+                    <h3>
+                        03<span>
+                            04月</span>
+                    </h3>
+                    <a href="/Markdown/" title="Markdown" target="_blank">
+                        Markdown</a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+                </main>
+                
+                    
+<aside class="col-md-4 sidebar">
+    
+    
+<div class="widget">
+    <h3 class="title">
+        搜索
+    </h3>
+    <div id="search-form">
+        <div id="result-mask" class="hide"></div>
+        <div class="search-area">
+            
+            <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢？">
+            <button type="button" class="search-form-submit" id="search-local">
+                站内搜索</button>
+            
+            
+        </div>
+        <div id="result-wrap" class="hide">
+            <div id="search-result"></div>
+        </div>
+        <div class="hide">
+            <template id="search-tpl">
+                <div class="item">
+                    <a href="/{path}" title="{title}">
+                        <div class="title">{title}</div>
+                        <div class="content">{content}</div>
+                    </a>
+                </div>
+            </template>
+        </div>
+    </div>
+</div>
+
+    
+    
+    
+    
+<div class="widget">
+    <h3 class="title">
+        社交
+    </h3>
+    <div class="content social">
+        
+        <a href="//github.com/Cainoftes" rel="external nofollow" title="Github" target="_blank">
+            <i class="git fa fa-git"></i>
+        </a>
+        
+        <a href="cainoftes@126.com" rel="external nofollow" title="邮箱" target="_blank">
+            <i class="envelope-o fa fa-envelope-o"></i>
+        </a>
+        
+        <a href="/atom.xml" rel="external nofollow" title="RSS" target="_blank">
+            <i class="feed fa fa-feed"></i>
+        </a>
+        
+    </div>
+</div>
+
+    
+    
+<div class="widget">
+    <h3 class="title">
+        分类
+    </h3>
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/"><i class="fa" aria-hidden="true">Essay</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/"><i class="fa" aria-hidden="true">Markdown</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Reference/"><i class="fa" aria-hidden="true">Reference</i></a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tutorial/"><i class="fa" aria-hidden="true">Tutorial</i></a><span class="category-list-count">1</span></li></ul>
+</div>
+
+    
+    
+<div class="widget">
+    <h3 class="title">
+        归档
+    </h3>
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/"><i class="fa" aria-hidden="true">2022年06月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/"><i class="fa" aria-hidden="true">2022年05月</i></a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/"><i class="fa" aria-hidden="true">2022年04月</i></a><span class="archive-list-count">7</span></li></ul>
+</div>
+
+    
+    
+<div class="widget">
+    <h3 class="title">
+        标签云
+    </h3>
+    <div class="content tag-cloud">
+        
+        <a href="/tags/DataBase/" style="font-size: 10px;">DataBase</a> <a href="/tags/Essay/" style="font-size: 10px;">Essay</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Reference/" style="font-size: 20px;">Reference</a>
+        
+    </div>
+</div>
+
+    
+    
+<div class="widget">
+    <h3 class="title">
+        友链
+    </h3>
+    <div class="content friends-link">
+        
+        <a href="https://hexo.io/zh-cn/" class="fa" target="_blank">
+            Hexo官网</a>
+        
+    </div>
+</div>
+
+    
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/js/search.js?rev=@@hash.js"></script>
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>
